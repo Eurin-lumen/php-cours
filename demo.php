@@ -1,12 +1,6 @@
 <?php
-$chiffre = null; 
-// while($chiffre !== 10 ){
-//     $chiffre = (int) readline('Entrez une heure : ');
-//     break;
+$notes  = [10, 15, 16];
 
-// }
-// echo "Vous avez gagné";
-
-for($i = 0 ; $i < 10; $i++){
-    echo "- $i \n"; 
+for($i = 0 ; $i < 3; $i++){
+    echo "-" . $notes[$i]; 
 }
