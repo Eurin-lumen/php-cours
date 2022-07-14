@@ -13,4 +13,17 @@ while(true){
         }
     }
 }
-print_r($creneaux);
+
+$heure = (int) readline("À quel heure voulez-vous visiter le magazin ? : ");
+$creneauxTrouve = false;
+foreach($creneaux as $creneau){
+    if($heure >= $creneau[0] &&  $heure <= $creneau[1]){
+        $creneauxTrouve = true;
+        break;
+    }
+}
+if($creneauxTrouve){
+    echo "le magazin sera ouvert";
+}else{
+    echo "désolé le magazin sera fermé :(";
+}
