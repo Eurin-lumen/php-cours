@@ -1,9 +1,7 @@
 <?php
-$heure = (int) readline('Entrez une heure : ');
+$chiffre = null; 
+while($chiffre !== 10 ){
+    $chiffre = (int) readline('Entrez une heure : ');
 
-if((9 >  $heure || $heure > 12) && (14 > $heure || $heure > 17 )){
-    echo "le magazin sera fermé";
-
-}else{
-    echo " le magazin sera ouvert";
 }
+echo "Vous avez gagné";
