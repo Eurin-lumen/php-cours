@@ -1,12 +1,9 @@
 <?php
-// variable
-$prenom = 'Eurin';
-$nom = 'HASH';
-$note1 = 10; 
-$note2 = 20;
-$moyenne = (($note1 + $note2) /2 );
+$heure = (int) readline('Entrez une heure : ');
 
+if((9 >  $heure || $heure > 12) && (14 > $heure || $heure > 17 )){
+    echo "le magazin sera fermé";
 
-echo "Bonjour $prenom $nom ; vous avez eu " . (($note1 + $note2) /2 ). " de moyennes  " ;
-
-echo "\n Bonjour $prenom $nom ; vous avez eu $moyenne de moyennes  " ;
+}else{
+    echo " le magazin sera ouvert";
+}
