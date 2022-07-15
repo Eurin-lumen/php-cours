@@ -10,3 +10,5 @@
 
 # les fonctions utilisateur
 
+# require et include
+

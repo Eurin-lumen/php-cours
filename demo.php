@@ -1,23 +1,3 @@
 <?php
-function demander_crenaux($phrase = "Veuillez entrer un créneau"){
-    echo $phrase . "\n";
-    while(true){
-        $ouverture = (int) readline("Heure d'ouverture : ");
-        if($ouverture >= 0 || $ouverture <= 23 ){
-            break;
-        }
-    while(true){
-        $fermeture = (int)readline("Heure de fermeture : ");
-        if($ouverture >= 0 && $ouverture <= 23 && $fermeture > $ouverture ){
-            break;
-        }
-
-    }
-    return [$ouverture, $fermeture];
-    $fermeture = readline("Heure de fermeture : ");
-    }
-}
-//$resultat = repondre_oui_non('Voulez-vous continuer ? : ');
-$creneau = demander_crenaux();
-$creneau2 = demander_crenaux('Veuillez entrez votre crénau');
-var_dump($creneau, $creneau2);
+include 'functions.php';
+var_dump(repondre_oui_non('Test0'));
