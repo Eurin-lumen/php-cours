@@ -7,7 +7,7 @@ while(true){
         echo "le crénaux ne peut etre enregistré car l'heure d'ouverture ($debut)  est supérieur à l'heure de femerture ($fin) ";
     } else {
         $creneaux[] = [$debut , $fin];
-        $action = readline("voulez-vous enregistrer un nouveau créneau (o/n) : ");
+        $action = readline("Entrez un nouveau créneau ? (n) : ");
         if($action == 'n'){
             break;
         }
@@ -15,9 +15,12 @@ while(true){
 }
 // le Magazin est ouvert de 14h à 18h et de 9h à 12 h
 
-echo "le magazin est ouvert de  ";
-foreach($creneaux as $creneau){
-    echo $creneau[0] . 'h à ' . $creneau[1] .'h';
+echo "le magazin est ouvert de ";
+foreach($creneaux as $k => $creneau){
+    if($k > 0){
+        echo ' et de ';
+    }
+    echo "{$creneau[0]} h à  {$creneau[1]} h";
 }
 /*
 $heure = (int) readline("À quel heure voulez-vous visiter le magazin ? : ");
