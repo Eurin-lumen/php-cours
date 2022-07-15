@@ -5,10 +5,9 @@
     <div class="col-md-4">
       <h5 class="container">Navigation</h5>
        <ul class="list-unstyled text-small container">
-          <?php
+        
+     <?= nav_menu('nav-link')?>
 
-          $linkClass= '';
-          require 'menu.php';?>
 
        </ul>
     </div>

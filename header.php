@@ -1,4 +1,6 @@
+<?php
 
+require_once 'functions.php';?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -28,9 +30,8 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-        <?php  
-         $class= 'nav-link';
-         require 'menu.php';?>
+        <?= nav_menu('nav-link')?>
+          
     </ul>
   </div>
 </nav>
