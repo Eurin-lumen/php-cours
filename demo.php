@@ -13,7 +13,13 @@ while(true){
         }
     }
 }
+// le Magazin est ouvert de 14h à 18h et de 9h à 12 h
 
+echo "le magazin est ouvert de  ";
+foreach($creneaux as $creneau){
+    echo $creneau[0] . 'h à ' . $creneau[1] .'h';
+}
+/*
 $heure = (int) readline("À quel heure voulez-vous visiter le magazin ? : ");
 $creneauxTrouve = false;
 foreach($creneaux as $creneau){
@@ -27,3 +33,4 @@ if($creneauxTrouve){
 }else{
     echo "désolé le magazin sera fermé :(";
 }
+*/
