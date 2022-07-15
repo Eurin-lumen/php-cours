@@ -10,16 +10,16 @@ require 'header.php';
 
 
 
-<?php if(isset($_GET['chiffre'])): ?>
+<?php if(isset($_POST['chiffre'])): ?>
     <?php 
-        if($_GET['chiffre'] > $aDeviner){
+        if($_POST['chiffre'] > $aDeviner){
             $erreur = "Votre chiffre est trop grand";
-        }elseif($_GET['chiffre'] < $aDeviner){
+        }elseif($_POST['chiffre'] < $aDeviner){
             $erreur= "Votre chiffre est trop petit";
         }else{
             $succes = "Bravo ! vous avez devineé le chiffre";
         }
-        $value=(int) $_GET['chiffre'];
+        $value=(int) $_POST['chiffre'];
         
         ?>
 <?php endif?>
@@ -35,13 +35,21 @@ require 'header.php';
 <?php endif ?>
 
 <div class="form-group">
-    <form action="/jeu.php" method="GET">
+    <form action="/jeu.php" method="POST">
         <input class="form-control" type="number" value="<?= $value ?>" name = "chiffre" placeholder="Entre (0 et 1000)"> <br>
         <button type="submit"  class="btn btn-primary">Deviner</button>
     </form>
 </div>
-        
-    
+
+<h2>$_GET</h2>
+<pre>
+    <?php var_dump($_GET)?>
+</pre>
+<br>
+<h2>$_POST</h2>
+<pre>
+    <?php var_dump($_POST)?>
+</pre>
 
 </div>
 <br>
