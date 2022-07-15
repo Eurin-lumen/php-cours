@@ -6,4 +6,7 @@
     (2)
 # les boucles
 
+# les fonctions
+
+
 
