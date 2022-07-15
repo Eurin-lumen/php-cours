@@ -1,9 +1,8 @@
 <?php
 
-$mot  = readline("Veuillez entrer un mot: ");
-$reverse =strtolower(strrev($mot)); 
-if (strtolower($mot) === $reverse){
-    echo "$mot ; est un palyndrome";
-}else{
-    echo "$mot ; n'est pas un palyndrome";
-}
+$notes = [10, 20, 13];
+
+$sum = array_sum($notes);
+$count = count($notes);
+
+echo "Vous avez ". round($sum / $count, 2) . " de moyenne";
