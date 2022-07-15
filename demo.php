@@ -1,8 +1,10 @@
 <?php
-
-$notes = [10, 20, 13];
-
-$sum = array_sum($notes);
-$count = count($notes);
-
-echo "Vous avez ". round($sum / $count, 2) . " de moyenne";
+// filtre a insulte
+$insultes = ['merde', 'con'];
+$astérisque =[];
+foreach($insultes as $insulte){  
+    $astérisque[] =  substr($insulte, 0, 1) .  str_repeat('*', strlen($insulte)- 1);
+}
+$phrase = readline('Entrez une phrase : ');
+$phrase = str_replace($insultes,['*****', '*****'], $phrase);
+echo $phrase;
