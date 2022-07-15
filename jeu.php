@@ -1,45 +1,43 @@
-<?php 
-$erreur = null;
-$succes = null;
-$value = null;
-$aDeviner = 150;
+<?php
+// Checkbox 
+$parfums = [
+    'Fraise' => 4,
+    'Chocolat' => 5,
+    'Vanille'=> 3
+];
+// radio
+
+$cornets = [
+    'Pot' => 2,
+    'Cornet' => 3
+];
+// checkbox
+$supplements = [
+    'Pépites de chocolat' => 1,
+    'Chantille' => 0.5
+];
 require 'header.php';
 ?>
+
+<h2>Composez votre glace</h2>
+
+
+
 <br>
 <div class="container">
 
-
-
-<?php if(isset($_POST['chiffre'])): ?>
-    <?php 
-        if($_POST['chiffre'] > $aDeviner){
-            $erreur = "Votre chiffre est trop grand";
-        }elseif($_POST['chiffre'] < $aDeviner){
-            $erreur= "Votre chiffre est trop petit";
-        }else{
-            $succes = "Bravo ! vous avez devineé le chiffre";
-        }
-        $value=(int) $_POST['chiffre'];
-        
-        ?>
-<?php endif?>
-
-<?php if($erreur): ?>
-    <div class="alert alert-danger">
-        <?= $erreur; ?>
-    </div>
-<?php elseif ($succes): ?>
-    <div class="alert alert-success">
-        <?= $succes ?>
-    </div>
-<?php endif ?>
-
-<div class="form-group">
     <form action="/jeu.php" method="POST">
-        <input class="form-control" type="number" value="<?= $value ?>" name = "chiffre" placeholder="Entre (0 et 1000)"> <br>
-        <button type="submit"  class="btn btn-primary">Deviner</button>
+        <div class="form-group">
+         
+        </div>
+        <div class="form-group">
+           
+        </div>
+    
+            <button type="submit"  class="btn btn-primary">Deviner</button>
+            <br>
     </form>
-</div>
+
 
 <h2>$_GET</h2>
 <pre>
