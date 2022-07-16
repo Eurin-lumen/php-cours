@@ -20,20 +20,27 @@ $title = "composez votre glace";
 require 'header.php';
 ?>
 <br>
-<h1>Composer votre glace</h1>
+<h1 class="">Composer votre glace</h1>
 
  <br>
-<form action="" method="GET">
-   <div class="container">
-        <div class="form-group">
-            <input type="checkbox" name="parfum[]" id="" value="Fraise"> Fraise <br>
-            <input type="checkbox" name="parfum[]" id="" value="Vanille"> Vanille<br>
-            <input type="checkbox" name="parfum[]" id="" value="Chocolat"> Chocolat <br>
+<div class="container">
+    <form action="/jeu.php" method="GET">
+    <?php foreach($parfums as $parfum => $prix):?>
+        <div class="container">
+            <label for="">
+                <input type="checkbox" name="parfum[]" id="" value="<?= $parfum ?>">
+                <?= $parfum ?> - <?= $prix ?> $
+            </label>
+    
         </div>
-        <button type="submit" class="btn btn-primary">Commander</button>
-   </div>
+    <?php endforeach; ?>
+    <br>
+    <button type="submit"  class="">Composer ma glace</button>
+
+        
 </form>
 
+</div>
 <div class="container">
     <br>
     <h2>$_GET</h2>
