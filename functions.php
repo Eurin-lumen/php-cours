@@ -28,9 +28,15 @@ function nav_menu(string $linkClass = ''):string {
 }
 
 function checkbox(string $name, string $value , array $data): string 
-{
+{ /**
+    * Notion a bien comprendre en ce qui concerne  les fonctions
+    */
+    $attribute = '';
+    if(isset($data[$name]) && in_array($value, $data[$name])){
+        $attribute .= 'checked';
+    }
     return <<<HTML
-    <input type="checkbox" name="{$name}[]" value="$value">
+    <input type="checkbox" name="{$name}[]" value="$value" $attribute>
 HTML;
 }
 ?>
