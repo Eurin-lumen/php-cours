@@ -1,4 +1,5 @@
 <?php
+require_once 'functions.php';
 // Checkbox 
 $parfums = [
     'Fraise' => 4,
@@ -17,6 +18,34 @@ $supplements = [
     'Chantille' => 0.5
 ];
 $title = "composez votre glace";
+$ingredient = [];
+$total= 0; 
+// verification
+
+if(isset($_GET['parfum'])){
+    foreach($_GET['parfum'] as $parfum){
+        if(isset($parfums[$parfum])){
+            $ingredient[] = $parfum;
+            $total += $parfums[$parfum]; // ajoute le prix de l'ingrédient
+        }
+    }
+}
+if(isset($_GET['supplement'])){
+    foreach($_GET['supplement'] as $supplement){
+        if(isset($supplements[$supplement])){
+            $ingredient[] = $supplement;
+            $total += $supplements[$supplement]; // ajoute le prix de l'ingrédient
+        }
+    }
+}
+if(isset($_GET['cornet'])){
+    $cornet = $_GET['cornet'];
+    if(isset($cornets[$cornet])){
+        $ingredient[] = $cornet;
+        $total += $cornets[$cornet]; // ajoute le prix de l'ingrédient
+    }
+    
+}
 require 'header.php';
 ?>
 <br>
@@ -24,22 +53,64 @@ require 'header.php';
 
  <br>
 <div class="container">
-    <form action="/jeu.php" method="GET">
-    <?php foreach($parfums as $parfum => $prix):?>
-        <div class="container">
-            <label for="">
-                <?= checkbox('parfum', $parfum, $_GET) ?>
-                <?= $parfum ?> - <?= $prix ?> $
-            </label>
-    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5><div class="card-title">Votre glace</div></h5>
+                <ul>
+                    <?php  foreach($ingredients as $ingredient):?>
+                      <li><?= $ingredient ?></li>  
+                    <?php endforeach ?>
+                    <p>
+                        <strong>Prix : </strong> <?= $total  ?> $
+                    </p>
+                </ul>
+            </div>
         </div>
-    <?php endforeach; ?>
-    <br>
-    <button type="submit"  class="">Composer ma glace</button>
-
         
-</form>
+    </div>
 
+    <div class="row">
+        <div class="col-md-8">
+    <form action="/jeu.php" method="GET">
+            <h2>Choissisez vos parfums</h2>
+                <?php foreach($parfums as $parfum => $prix):?>
+            <div class="container">
+                <label for="">
+                    <?= checkbox('parfum', $parfum, $_GET) ?>
+                    <?= $parfum ?> - <?= $prix ?> $
+                </label>
+        
+            </div>
+                <?php endforeach; ?>
+            <h2>Choissisez votre Cornet</h2>
+
+                <?php foreach($cornets as $cornet => $prix):?>
+            <div class="container">
+                <label for="">
+                    <?= radio('cornet', $cornet, $_GET) ?>
+                    <?= $cornet ?> - <?= $prix ?> $
+                </label>
+        
+            </div>
+                <?php endforeach; ?>
+            <h2>Choissisez votre supplement</h2>
+
+                <?php foreach($supplements as $supplement => $prix):?>
+            <div class="container">
+                <label for="">
+                    <?= checkbox('supplement', $supplement, $_GET) ?>
+                    <?= $supplement ?> - <?= $prix ?> $
+                </label>
+        
+            </div>
+                <?php endforeach; ?>
+
+        <br>
+        <button type="submit"  class="btn btn-primary">Composer ma glace</button>
+    </form>
+        </div>
+    </div>
 </div>
 <div class="container">
     <br>

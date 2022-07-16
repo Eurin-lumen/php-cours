@@ -26,7 +26,7 @@ function nav_menu(string $linkClass = ''):string {
 
 
 }
-
+// controle checkbox
 function checkbox(string $name, string $value , array $data): string 
 { /**
     * Notion a bien comprendre en ce qui concerne  les fonctions
@@ -39,4 +39,25 @@ function checkbox(string $name, string $value , array $data): string
     <input type="checkbox" name="{$name}[]" value="$value" $attribute>
 HTML;
 }
+// radio
+function radio(string $name, string $value , array $data): string 
+{ /**
+    * Notion a bien comprendre en ce qui concerne  les fonctions
+    */
+    $attribute = '';
+    if(isset($data[$name]) && $value === $data[$name]){
+        $attribute .= 'checked';
+    }
+    return <<<HTML
+    <input type="radio" name="{$name}" value="$value" $attribute>
+HTML;
+}
+
+function dump($variable){
+    echo '<pre>';
+    var_dump($variable);
+
+    echo '</pre>';
+}
+
 ?>
