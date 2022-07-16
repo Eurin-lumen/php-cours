@@ -28,7 +28,7 @@ require 'header.php';
     <?php foreach($parfums as $parfum => $prix):?>
         <div class="container">
             <label for="">
-                <input type="checkbox" name="parfum[]" id="" value="<?= $parfum ?>">
+                <?= checkbox('parfum', $parfum, $_GET) ?>
                 <?= $parfum ?> - <?= $prix ?> $
             </label>
     

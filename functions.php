@@ -1,4 +1,5 @@
 <?php
+use function CommonMark\Render\HTML;
 
 function nav_item(string $lien, string $titre, string $linkClass = ''): string
 {
@@ -26,4 +27,10 @@ function nav_menu(string $linkClass = ''):string {
 
 }
 
+function checkbox(string $name, string $value , array $data): string 
+{
+    return <<<HTML
+    <input type="checkbox" name="{$name}[]" value="$value">
+HTML;
+}
 ?>
