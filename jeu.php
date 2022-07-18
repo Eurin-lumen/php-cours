@@ -134,9 +134,9 @@ require 'header.php';
         </pre>
     <br> <br>
 
-    <h2>$_POST</h2>
+    <h2>$_GET</h2>
         <pre>
-            <?php var_dump($_POST) ?>
+            <?php var_dump($_GET) ?>
         </pre>
 </div>
   
