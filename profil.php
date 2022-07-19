@@ -1,10 +1,6 @@
 <?php
-$user = [
-    'prenom' => 'Eurin',
-    'nom' => 'HASH',
-    'age' => 18
-];
-setcookie('utilisateur', serialize($user));
+$utilisateur = $_COOKIE['utilisateur'];
+var_dump(unserialize($utilisateur));
 require 'elements/header.php';
 ?>
 <?php 
