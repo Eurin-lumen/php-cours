@@ -1,17 +1,10 @@
 <?php
-if(!empty($_GET['action'] === 'deconnecter')){
-    unset($_COOKIE['utilisateur']);
-    setcookie('utlisateur', '', time() - 10);
-
-}
-if(!empty($_COOKIE['utilisateur'])){
-    $nom = $_COOKIE['utilisateur'];
-}
-if(!empty($_POST['nom'])){
-    setcookie('utilisateur', $_POST['nom']);
-    $nom = $_COOKIE['nom'];
-
-}
+$user = [
+    'prenom' => 'Eurin',
+    'nom' => 'HASH',
+    'age' => 18
+];
+setcookie('utilisateur', serialize($user));
 require 'elements/header.php';
 ?>
 <?php 
