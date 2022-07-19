@@ -1,4 +1,5 @@
 <?php
+session_start();
 // fuseau horaire
  
 $title = "Contact";
@@ -14,12 +15,17 @@ $ouvert = in_creneaux($heure, $creneaux);
 if($ouvert) { $color = 'green'; } else {$color = 'red';}
 
 
-require 'header.php';
+require 'elements/header.php';
 //$creneaux = crenaux_html(CRENAUX);
 ?>
-
+  >  
 <div class="container">
   <div class="row">
+  <h2>Debug</h2>
+    <pre>
+      <?php var_dump($_SESSION);?>
+</pre>
+
     <div class="col-md-8">
         <h2> contactez-nous</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nemo sed eius, <br> voluptas magnam fugiat debitis ullam quos minus facere placeat, ratione nulla quod doloribus aut maxime! Placeat, laborum neque. </p>
@@ -58,4 +64,4 @@ require 'header.php';
 
 
 <br> <br> <br>
-<?php require 'footer.php';?>
+<?php require 'elements/footer.php';?>

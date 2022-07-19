@@ -1,7 +1,9 @@
 <?php
+session_start();
+unset($_SESSION['role']);
 $title = "Page d'accueil";
 $nav = "index";
-require 'header.php';?>
+require 'elements/header.php';?>
 
     <div class="container">
 
@@ -13,5 +15,5 @@ require 'header.php';?>
 
     </div>
     
-    <?php require 'footer.php'; ?>
+    <?php require 'elements/footer.php'; ?>
 
