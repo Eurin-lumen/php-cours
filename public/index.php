@@ -16,7 +16,9 @@ if(is_array($match)){
 
     }else{
         $params = $match['params'];
-        $pageContent =  require "../template/{$match['target']}.php";
+        ob_start();
+         require "../template/{$match['target']}.php";
+        $pageContent = ob_get_clean(); 
     }
     require '../elements/layout.php';
 
