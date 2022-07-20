@@ -16,9 +16,9 @@ if(is_array($match)){
 
     }else{
         $params = $match['params'];
-        require "../template/{$match['target']}.php";
+        $pageContent =  require "../template/{$match['target']}.php";
     }
-    require '../elements/footer.php';
+    require '../elements/layout.php';
 
 }else{
     echo '404';
