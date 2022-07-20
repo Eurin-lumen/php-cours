@@ -13,6 +13,7 @@
 <?= $pageContent ?>
 
     </div>
+<?= $pageJavascripts ??  ''?>
 </body>
 </html>
     

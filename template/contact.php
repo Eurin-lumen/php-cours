@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Nous contacter";
-$pageDescription = "NOus contacter grace a ce super formulaire de contact";
+$pageDescription = "Nous contacter grace a ce super formulaire de contact";
 
 ?>
 
